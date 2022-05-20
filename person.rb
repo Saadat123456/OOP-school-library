@@ -1,4 +1,4 @@
-require './Interface/nameable.rb'
+require './Interface/nameable'
 
 class Person < Nameable
   attr_reader :id
