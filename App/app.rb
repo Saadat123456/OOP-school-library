@@ -154,7 +154,7 @@ class App
 
   def show_menu
     welcome_message
-    until @option == 7 do
+    while @option != 7
       show_options
       @option = gets.chomp.to_i
       run_user_command if @option != 7
