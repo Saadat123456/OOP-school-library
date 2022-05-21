@@ -31,7 +31,7 @@ class App
     print 'Age: '
     age = gets.chomp.to_i
     print 'Name: '
-    name = gets.chomp.to_i
+    name = gets.chomp
     print 'Has parent permission? [Y/N]: '
     permission = gets.chomp
     student = Student.new(age, 0, name, parent_permission: %w[Y y].include?(permission))
@@ -44,7 +44,7 @@ class App
     print 'Age: '
     age = gets.chomp.to_i
     print 'Name: '
-    name = gets.chomp.to_i
+    name = gets.chomp
     print 'Specialization: '
     specialization = gets.chomp
     teacher = Teacher.new(age, specialization, name)
