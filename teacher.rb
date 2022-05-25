@@ -1,4 +1,5 @@
 require_relative './person'
+require 'json'
 
 class Teacher < Person
   def initialize(age, specialization, name = 'Unknown', parent_permission: true)
@@ -12,15 +13,17 @@ class Teacher < Person
 
   def as_json()
     {
-      id: @id,
-      name: @name,
-      age: @age,
-      parent_permission: @parent_permission,
-      specialization: @specialization
+      JSON.create_id => self.class.name,
+      'a' => [@age, @specialization, @name]
     }
   end
 
   def to_json(*options)
-    as_json(*options).to_json(*options)
+    as_json().to_json(*options)
+  end
+
+  def self.json_create(object)
+    age, specialization, name, parent_permission = object['a']
+    new(age, specialization, name, parent_permission: parent_permission)
   end
 end
