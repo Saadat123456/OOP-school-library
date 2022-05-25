@@ -19,7 +19,7 @@ class Teacher < Person
   end
 
   def to_json(*options)
-    as_json().to_json(*options)
+    as_json.to_json(*options)
   end
 
   def self.json_create(object)
