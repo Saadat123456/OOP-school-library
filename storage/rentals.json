@@ -1,1 +1,1 @@
-["{\"date\":\"aedrgf\",\"person\":\"{\\\"id\\\":81,\\\"name\\\":\\\"asdf\\\",\\\"age\\\":54,\\\"parent_permission\\\":false,\\\"classroom\\\":0}\",\"book\":\"{\\\"title\\\":\\\"asdf\\\",\\\"author\\\":\\\"gdfs\\\"}\"}"]
+["{\"json_class\":\"Rental\",\"a\":[\"1221312\",{\"json_class\":\"Teacher\",\"a\":[44,\"rrt\",\"asd\"]},{\"json_class\":\"Book\",\"a\":[\"a\",\"b\"]}]}"]
