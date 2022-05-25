@@ -1,4 +1,6 @@
 class Rentals
+  attr_accessor :rentals
+
   def initialize(books, people)
     @rentals = []
     @books = books
