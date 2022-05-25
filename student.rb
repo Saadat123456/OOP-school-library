@@ -1,4 +1,5 @@
 require_relative './person'
+require 'json'
 
 class Student < Person
   attr_reader :classroom
@@ -19,15 +20,17 @@ class Student < Person
 
   def as_json()
     {
-      id: @id,
-      name: @name,
-      age: @age,
-      parent_permission: @parent_permission,
-      classroom: @classroom
+      JSON.create_id => self.class.name,
+      'a' => [@age, @classroom, @name]
     }
   end
 
   def to_json(*options)
-    as_json(*options).to_json(*options)
+    as_json().to_json(*options)
+  end
+
+  def self.json_create(object)
+    age, classroom, name, parent_permission = object['a']
+    new(age, classroom, name, parent_permission: parent_permission)
   end
 end
