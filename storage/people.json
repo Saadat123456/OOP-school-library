@@ -1,1 +1,1 @@
-["{\"json_class\":\"Student\",\"a\":[0,0,\"sd\",true]}","{\"json_class\":\"Teacher\",\"a\":[44,\"rrt\",\"asd\",true]}"]
+[{"json_class":"Student","a":[0,0,"sd"]},{"json_class":"Teacher","a":[44,"rrt","asd"]},{"json_class":"Student","a":[23,0,"Alejandro"]}]

@@ -7,10 +7,7 @@ class Storage
   end
 
   def save_data(class_name, data)
-    obj = []
-    data.each do |o|
-      obj.push(o.to_json)
-    end
+    obj = data
     path = "#{@base_path}#{class_name}#{@ext}"
     File.open(path, 'w') do |file|
       JSON.dump(obj, file)
