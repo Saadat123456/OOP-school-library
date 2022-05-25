@@ -1,4 +1,5 @@
 require_relative './rental'
+require 'json'
 
 class Book
   attr_accessor :title, :author, :rentals
@@ -15,12 +16,16 @@ class Book
 
   def as_json()
     {
-      title: @title,
-      author: @author
+      JSON.create_id => self.class.name,
+      'a' => [@title, @author]
     }
   end
 
   def to_json(*options)
-    as_json(*options).to_json(*options)
+    as_json.to_json(*options)
+  end
+
+  def self.json_create(object)
+    new(*object['a'])
   end
 end
