@@ -16,15 +16,15 @@ class AppController < AppControllerInterface
     @storage = Storage.new
     books_array = @storage.load_data('books')
     books_array.each do |book|
-      @books.books << JSON.parse(book, create_additions: true)
+      @books.books << JSON.parse(book.to_json, create_additions: true)
     end
     people_array = @storage.load_data('people')
     people_array.each do |person|
-      @people.people << JSON.parse(person, create_additions: true)
+      @people.people << JSON.parse(person.to_json, create_additions: true)
     end
     rentals_array = @storage.load_data('rentals')
     rentals_array.each do |rental|
-      @rentals.rentals << JSON.parse(rental, create_additions: true)
+      @rentals.rentals << JSON.parse(rental.to_json, create_additions: true)
     end
   end
 
